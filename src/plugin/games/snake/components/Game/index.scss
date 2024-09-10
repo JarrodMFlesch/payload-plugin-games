@@ -1,0 +1,36 @@
+.snake-game {
+  --cell-size: 10px;
+  --snake-color: var(--theme-warning-250);
+  --snake-head-color: var(--theme-warning-350);
+  --snake-tail-color: var(--theme-warning-200);
+  --dead-snake-color: var(--theme-error-200);
+  --dead-snake-head-color: var(--theme-error-500);
+  --dead-snake-tail-color: var(--theme-error-300);
+  --food-color: var(--theme-success-350);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__board {
+    display: flex;
+  }
+
+  &__board__container {
+    display: flex;
+  }
+
+  &__board-items {
+    display: grid;
+    grid-template-columns: repeat(var(--board-cols), clamp(5px, var(--cell-size), var(--cell-size)));
+    grid-template-rows: repeat(var(--board-rows), clamp(5px, var(--cell-size), var(--cell-size)));
+  }
+
+  &__cell {
+    height: clamp(5px, var(--cell-size), var(--cell-size));
+    width: clamp(5px, var(--cell-size), 100%);
+    background: var(--theme-elevation-100);
+    border: 1px var(--theme-border-color);
+  }
+}
